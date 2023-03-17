@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>GOOGLE CLONE</title>
+</head>
+
+<body>
+    <!-- the header section  which has two div block in it-->
+    <div class="header">
+        <!-- this is a left side div with a link in it-->
+        <div class="header_left">
+            <a href="#">About</a>
+            <a href="#">Store</a>
+        </div>
+
+        <div class="header_right">
+            <a href="https://mail.google.com/">Gmail</a>
+            <a
+                href="https://www.google.com/search?q=images&oq=images&aqs=chrome..69i57j0j0i3j0j0i433j69i61j69i60j69i61.969j0j7&sourceid=chrome&ie=UTF-8">Images</a>
+            <a href="#"> <span class="material-icons header_app"> apps</span>
+            </a>
+            <span class="material-icons"> account_circle</span>
+        </div>
+    </div>
+    <!-- end of hearder section -->
+
+    <!-- mainbody sectiion start here -->
+    <div class="mainbody">
+        <!-- <img src="google_img.png" style="width: 500px;" alt="google logo"> -->
+        <!-- This is the way to make images show up in django-->
+        <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" alt="Google Logo">
+
+        <!--     search engine section-->
+        <form action="search" method="POST">
+            <!-- good for security -->
+            {% csrf_token %}
+            <div class="search">
+                <div class="search_input">
+                    <span class="material-icons">search</span>
+                    <input type="text" name="search" autofocus x-webkit-speech>
+                    <span class="material-icons">mic</span>
+                </div>
+
+                <div class="search_button">
+                    <a href=""><button type="submit">Google search</button></a>
+                    <button>I'm feeling lucky</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</body>
+
+</html>
